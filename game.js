@@ -3,7 +3,7 @@ function rand(max) {
 }
 let round = 1;
 let check = false;
-let score = 10;
+let score = ;
 let guess = 1;
 var output = document.getElementById("output")
 function see() {
