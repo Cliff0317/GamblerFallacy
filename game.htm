@@ -3,13 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>賭徒謬誤</title>
-    <script src="game.js"></script>
 </head>
-<body style="font-family: Microsoft Jhenghei;">
+<body style="font-family: Microsoft Jhenghei; font-size: 15px;">
+    <p id="output"><b style="position: fixed; background-color: white;">您的嘗試如下所示：</b><br></p>
+    <button id="rise" onclick="rise()" style="font-size: 100%;">股票應該上漲！</button>    <span id="score"></span>    <button id="fall" onclick="fall()" style="font-size: 100%;">股價應該下跌！</button>
+    <p id="result" style="border-style: solid">我們正在測試您的能力，因此此處的分數不計算在內。</p>
     <img src="jake.png" width="100px">
-    <p id="score">員工信任度：1</p>
-    <p id="result"></p>
-    <button id="rise" onclick="rise()" style="font-size: 100%;">股票應該上漲！</button>
-    <button id="fall" onclick="fall()" style="font-size: 100%;">股價應該下跌！</button>
+    <script src="game.js"></script>
 </body>
 </html>
