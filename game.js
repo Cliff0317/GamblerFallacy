@@ -1,19 +1,47 @@
 function rand(max) {
     return Math.floor(Math.random() * Math.floor(max))
 }
+
 let round = 1;
 let check = false;
-let score = 3;
 let guess = 1;
+let defaultScore = 5;
+let score = defaultScore;
 var output = document.getElementById("output")
+let stat = false;
+
+function hide() {
+    output.style.display = "none";
+    stat = false;
+}
+function show() {
+    output.style.display = "block";
+    stat = true;
+}
+
+function toggle() {
+    if (stat == false) {
+        document.getElementById("instructions").textContent = " <- 查看後，請按按鈕關閉此面板。"
+        show()
+    } else {
+        hide()
+        document.getElementById("instructions").textContent = ""
+    }
+    window.scrollTo(0,document.body.scrollHeight);
+}
+
 function see() {
     var res = "第" + round + "次嘗試，結果" + (check ? ("正確") : ("錯誤")) + "，猜測" + (guess ? ("股價上漲") : ("股價下跌")) + "。<br>"
     output.innerHTML += res
+    if (stat == false) {
+        document.getElementById("instructions").textContent = " <- 請立即單擊此按鈕以查看您的歷史記錄。"
+    }
     if (round > 10) {
         if (score == 0) {
             document.getElementById("result").textContent = "您已經失去了員工的信任！ 那我為什麼要相信你？"
             document.getElementById("score").textContent = "您投資了" + round + "輪。但是，我們將解僱您，並找到一個更聰明的老闆...祝您好運！"
-            alert("遊戲結束。 請把分數報告給教授。");
+            document.getElementById("restart").href = "index.htm";
+            alert("遊戲結束。請把分數報告給教授。");
             return
         }
         if (check) {
@@ -30,7 +58,7 @@ function see() {
     } else {
         if (round == 10) {
             document.getElementById("result").textContent = "現在，您即將在我們公司工作！我覺得您是“得分王”！"
-            score = 10
+            score = defaultScore;
             round += 1
             return
         }

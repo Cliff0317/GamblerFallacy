@@ -5,10 +5,33 @@
     <title>賭徒謬誤</title>
 </head>
 <body style="font-family: Microsoft Jhenghei; font-size: 15px;">
-    <p id="output"><b style="position: fixed; background-color: white;">您的嘗試如下所示：</b><br></p>
-    <button id="rise" onclick="rise()" style="font-size: 100%;">股票應該上漲！</button>    <span id="score"></span>    <button id="fall" onclick="fall()" style="font-size: 100%;">股價應該下跌！</button>
+    <script type="text/javascript">
+        function createPopup(){
+            var popup = open("", "Popup", "width=300,height=200");
+            var txt = popup.document.createElement("p");
+            var btn = popup.document.createElement("button")
+            btn.innerHTML = "關閉"
+            txt.innerHTML = "賭徒謬論是一種謬論，其中玩家將獨立事件誤解為從屬事件，從而遵循了遊戲中的歷史元素。<br><i style='font-size: small'>這只是一個提示。關於策略，請您自己考慮。</i>"
+            txt.style.fontSize = "medium";
+            btn.style.fontSize = "medium";
+            popup.document.body.appendChild(txt);
+            btn.onclick = function(event) {
+                popup.window.close();
+            };
+            popup.document.body.appendChild(btn);
+        }
+    </script>
+    <button id="thoughts" onclick="createPopup()" style="font-size: 100%; border-style: none">遊戲思路（請點擊此處打開戰略提示）</button>
+    <p id="output" style="display: none"><b style="position: relative; background-color: white;">您的嘗試如下所示：</b><br></p>
+    <hr><button id="toggle" style="font-size: 100%; background-color: black; color: white; border-style: none;" onclick="toggle()">顯示/隱藏我的遊戲歷史</button>  <span id="instructions" style="background-color: pink"></span>
+    <hr>
+    在以下按鈕中猜測股票價格狀態：
+    <button id="rise" onclick="rise()" style="font-size: 100%; border-style: none; background-color: red; color: white;">股票應該上漲！</button> 或 <button id="fall" onclick="fall()" style="font-size: 100%; border-style: none; background-color: green; color: white;">股價應該下跌！</button><br>
+    你的狀態：<span id="score">您沒有任何猜測，因此目前沒有結果。</span>
+    <hr>
     <p id="result" style="border-style: solid">我們正在測試您的能力，因此此處的分數不計算在內。</p>
     <img src="jake.png" width="100px">
+    <a href="#" id="restart">重玩遊戲</a>
     <script src="game.js"></script>
 </body>
 </html>
