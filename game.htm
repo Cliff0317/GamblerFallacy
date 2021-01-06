@@ -3,22 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>賭徒謬誤</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body style="font-family: Microsoft Jhenghei; font-size: 15px;">
     <script type="text/javascript">
         function createPopup(){
-            var popup = open("", "Popup", "width=300,height=200");
-            var txt = popup.document.createElement("p");
-            var btn = popup.document.createElement("button")
-            btn.innerHTML = "關閉"
-            txt.innerHTML = "賭徒謬論是一種謬論，其中玩家將獨立事件誤解為從屬事件，從而遵循了遊戲中的歷史元素。<br><i style='font-size: small'>這只是一個提示。關於策略，請您自己考慮。</i>"
-            txt.style.fontSize = "medium";
-            btn.style.fontSize = "medium";
-            popup.document.body.appendChild(txt);
-            btn.onclick = function(event) {
-                popup.window.close();
-            };
-            popup.document.body.appendChild(btn);
+            var popup = open("content.htm", "newWin", "width="+screen.availWidth+",height="+screen.availHeight)
         }
     </script>
     <button id="thoughts" onclick="createPopup()" style="font-size: 100%; border-style: none">遊戲思路（請點擊此處打開戰略提示）</button>
@@ -27,7 +17,7 @@
     <hr>
     在以下按鈕中猜測股票價格狀態：
     <button id="rise" onclick="rise()" style="font-size: 100%; border-style: none; background-color: red; color: white;">股票應該上漲！</button> 或 <button id="fall" onclick="fall()" style="font-size: 100%; border-style: none; background-color: green; color: white;">股價應該下跌！</button><br>
-    你的狀態：<span id="score">您沒有任何猜測，因此目前沒有結果。</span>
+    你的狀態：<b><span id="score">您沒有任何猜測，因此目前沒有結果。</span></b>
     <hr>
     <p id="result" style="border-style: solid">我們正在測試您的能力，因此此處的分數不計算在內。</p>
     <img src="jake.png" width="100px">

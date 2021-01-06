@@ -41,7 +41,7 @@ function see() {
             document.getElementById("result").textContent = "您已經失去了員工的信任！ 那我為什麼要相信你？"
             document.getElementById("score").textContent = "您投資了" + round + "輪。但是，我們將解僱您，並找到一個更聰明的老闆...祝您好運！"
             document.getElementById("restart").href = "index.htm";
-            alert("遊戲結束。請把分數報告給教授。");
+            swal("遊戲結束", "遊戲結束。請把分數報告給教授。");
             return
         }
         if (check) {
