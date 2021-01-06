@@ -59,7 +59,7 @@ function see() {
         if (round == 10) {
             document.getElementById("result").textContent = "現在，您即將在我們公司工作！我覺得您是“得分王”！"
             score = defaultScore;
-            round += 1
+            round = 0
             return
         }
         if (check) {
