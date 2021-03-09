@@ -13,16 +13,20 @@
     </style>
 </head>
 <body style="font-family: Microsoft Jhenghei; background-color: white;">
-    <b>一個人站在馬路上，高興地向你問候。他說他的名字叫Jake。</b><br>
-    <p style="border-style: solid">
+    <b>一個人站在馬路上，高興地向你問候。他說他的名字叫Jake。他昨晚感冒了，所以聲音沙啞。</b><br>
+    <p style="border-style: solid" id="textbox">
         您到了。讓我為您導覽這裡。
-        我們正在研究一種稱為“楊氏股票”的股票市場。
+        我們正在研究一稱為“楊氏股票”的股票市場。
         我的老闆在這個股票市場上表現十分糟糕，獲得了許多客戶的申訴。
         你能幫助我嗎？
         您可以傳Messenger告知我價格會漲還是跌。
         我會根據客戶的需求將其報告給客戶。
+        謝啦！
     </p>
-    <img src="jake.png" width="100">
+    <img onclick="
+    const utter = new SpeechSynthesisUtterance('You are here. Let me guide you here. We are studying a stock market called Yang\'s stock. My boss performed very badly in this stock market and got many complaints from customers. can you help me? You can send Messenger to tell me whether the price will go up or down. I will report it to the customer according to the customer\'s needs. Thanks.');
+    speechSynthesis.speak(utter);
+        " src="jake.png" width="100">(點擊以朗誦英文版)<br>
     <a href="game.htm">&nbsp;好！我會盡力！&nbsp;</a>
 </body>
 </html>

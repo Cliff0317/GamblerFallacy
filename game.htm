@@ -1,27 +1,39 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>賭徒謬誤</title>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body style="font-family: Microsoft Jhenghei; font-size: 15px;">
     <script type="text/javascript">
-        function createPopup(){
-            var popup = open("content.htm", "newWin", "width="+screen.availWidth+",height="+screen.availHeight)
+        function createPopup() {
+            var popup = open("content.htm", "newWin", "width=" + screen.availWidth + ",height=" + screen.availHeight)
         }
     </script>
-    <button id="thoughts" onclick="createPopup()" style="font-size: 100%; border-style: none">遊戲思路（請點擊此處打開戰略提示）</button>
-    <p id="output" style="display: none; font-size: 300%;">
-        <img src="https://scontent.ftpe3-2.fna.fbcdn.net/v/t39.8562-6/120009688_325579128711709_1736249742330805861_n.png?_nc_cat=1&ccb=2&_nc_sid=6825c5&_nc_ohc=_NSpI976_60AX-ANUbB&_nc_ht=scontent.ftpe3-2.fna&oh=56d50617d1a5e7e7898e1bafb5e1466c&oe=6042037D" style="width: 4.0%; height:auto;">
+    <button id="toggle" style="font-size: 100%; background-color: black; color: white; border-style: none;"
+    onclick="toggle()">顯示/隱藏我的Messenger</button> <span id="instructions"></span>
+    <button id="thoughts" onclick="createPopup()"
+        style="font-size: 100%; border-style: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; position: fixed; ">遊戲思路（請點擊此處打開戰略提示）</button>
+    <p id="output" style="display: none; font-size: 300%;"><br>
+        <img src="jake-messenger.jpg" style="width: 4.0%; height:auto;">
         &nbsp;Jake <span style="color: grey; font-size: 50%;">目前在線上</span></b><br>
     </p>
-    <hr><button id="toggle" style="font-size: 100%; background-color: black; color: white; border-style: none;" onclick="toggle()">顯示/隱藏我的Messenger</button>  <span id="instructions"></span>
-    <hr>
+    <br>
     在以下按鈕中猜測股票價格狀態：
-    <button id="rise" onclick="rise()" style="font-size: 100%; border-style: none; background-color: red; color: white;">股票應該上漲！</button> 或 <button id="fall" onclick="fall()" style="font-size: 100%; border-style: none; background-color: green; color: white;">股價應該下跌！</button><br>
-    你的狀態：<b><span id="score">您沒有任何猜測，因此目前沒有結果。</span></b><hr>
-    <a id="restart" style="text-decoration: none; color: black; background-color: cyan;">&nbsp;重玩遊戲&nbsp;</a><-此選項僅能於遊戲結束時使用。
-    <script src="game.js"></script>
+    <button id="rise" onclick="rise()"
+        style="font-size: 100%; -webkit-user-select: none; -ms-user-select: none; user-select: none; border-style: none; background-color: red; color: white;">股票應該上漲！</button>
+    或 <button id="fall" onclick="fall()"
+        style="font-size: 100%; border-style: none; background-color: green; color: white; -webkit-user-select: none; -ms-user-select: none; user-select: none;">股價應該下跌！</button><br>
+    你的狀態：<b><span id="score">您沒有任何猜測，因此目前沒有結果。</span></b>
+    <br>
+    <details style="-webkit-user-select: none; -ms-user-select: none; user-select: none;">
+        <summary>遊戲結束？點擊此處！</summary>
+        <a id="restart" style="text-decoration: none; color: black; background-color: cyan;">&nbsp;重玩遊戲&nbsp;</a>
+        <-此選項僅能於遊戲結束時使用。 </details>
+            <script src="game.js"></script>
 </body>
+
 </html>
