@@ -25,11 +25,9 @@ function show() {
 
 function toggle() {
     if (stat == false) {
-        document.getElementById("instructions").textContent = " <- 查看後，請按按鈕關閉此面板。"
         show()
     } else {
         hide()
-        document.getElementById("instructions").textContent = ""
     }
     window.scrollTo(0,document.body.scrollHeight);
 }
