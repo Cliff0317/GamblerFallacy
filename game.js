@@ -35,15 +35,12 @@ function toggle() {
 function see() {
     var res = "<p style='background-color: #c9c2c1; width: 260px; position: absolute; right: 0; font-size: 35%;'>我猜測" + (guess ? ("股價將上漲") : ("股價將下跌")) + "。</p><br><p style='background-color: cyan; width: 260px; font-size: 35%;'>" + (check ? ("正確！😊你超棒！") : ("錯了...😒真可惜啊！")) + "</p>"
     output.innerHTML += res
-    if (stat == false) {
-        document.getElementById("instructions").textContent = " <- 請立即單擊此按鈕以查看您的歷史記錄。"
-    }
     if (round > 10) {
         if (score == 0) {
             document.getElementById("output").innerHTML += "<p style='background-color: cyan; width: 100px; font-size: 35%;'>Jake 已解除好友</p>"
-            document.getElementById("score").textContent = "您投資了" + round + "輪。但是，我們將解僱您，並找到一個更聰明的老闆...祝您好運！"
+            document.getElementById("score").textContent = "您投資了" + round + "天。但是，我們將解僱您，並找到一個更聰明的老闆...祝您好運！"
             document.getElementById("restart").href = "index.htm";
-            swal("遊戲結束", "遊戲結束。請將" + round + "輪報告給教授，當作分數。");
+            swal("遊戲結束", "遊戲結束。請將" + round + "天報告給教授，當作分數。");
             return
         }
         if (check) {
@@ -63,11 +60,11 @@ function see() {
         }
         if (check) {
             score += 1
-            document.getElementById("score").textContent = "模擬公司收入：NT$" + score * 100 + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "模擬公司收入：NT$" + score * 100 + "，您模擬了" + round + "輪。"
             round += 1
         } else {
             score -= 1
-            document.getElementById("score").textContent = "模擬公司收入：NT$" + score * 100 + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "模擬公司收入：NT$" + score * 100 + "，您模擬了" + round + "輪。"
             round += 1
         }
     }
