@@ -1,36 +1,64 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>賭徒謬誤</title>
-    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="shortcut icon" href="favicon.ico">
     <style>
         a {
             text-decoration: none;
             border-color: black;
             color: black;
             background-color: cyan;
+            transition: margin-left 1s;
         }
+
         a:hover {
             background-color: red;
+            margin-left: 10px;
+        }
+
+        /* DEMO-SPECIFIC STYLES */
+        .typewriter {
+            color: black;
+            font-family: Microsoft Jhenghei;
+            overflow: hidden;
+            /* Ensures the content is not revealed until the animation */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            margin: 0 auto;
+            /* Gives that scrolling effect as the typing happens */
+            letter-spacing: 0em;
+            /* Adjust as needed */
+            animation:
+                typing 10s;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        #textbox {
+            margin-left: 0cm;
         }
     </style>
 </head>
+
 <body style="font-family: Microsoft Jhenghei; background-color: white;">
     <b>一個人站在馬路上，高興地向你問候。他說他的名字叫Jake。他昨晚感冒了，所以聲音沙啞。</b><br>
-    <p style="border-style: solid" id="textbox">
-        您到了。讓我為您導覽這裡。
-        我們正在研究一稱為“楊氏股票”的股票市場。
-        我的老闆在這個股票市場上表現十分糟糕，獲得了許多客戶的申訴。
-        你能幫助我嗎？
-        您可以傳Messenger告知我價格會漲還是跌。
-        我會根據客戶的需求將其報告給客戶。
-        謝啦！
+    <p style="border-style: solid" id="textbox" class="typewriter">
+        我們正在研究一稱為“楊氏股票”的股票市場。錢我們去年得到NT$500，所以就作為你的初始收入。可以嗎？
     </p>
-    <img onclick="
-    const utter = new SpeechSynthesisUtterance('You are here. Let me guide you here. We are studying a stock market called Yang\'s stock. My boss performed very badly in this stock market and got many complaints from customers. can you help me? You can send Messenger to tell me whether the price will go up or down. I will report it to the customer according to the customer\'s needs. Thanks.');
-    speechSynthesis.speak(utter);
-        " src="jake.png" width="100">(點擊該角色以朗誦英文版)<br>
+    <img src="jake.png" width="100"><br>
     <a href="game.htm">&nbsp;好！我會盡力！&nbsp;</a>
 </body>
+
 </html>
