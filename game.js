@@ -50,11 +50,11 @@ function see() {
         }
         if (check) {
             score += 1
-            document.getElementById("score").textContent = "客戶信任度：" + score + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "公司本年收入：NT$" + score + "，您工作了" + round + "天。"
             round += 1
         } else {
             score -= 1
-            document.getElementById("score").textContent = "客戶信任度：" + score + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "公司本年收入：NT$" + score + "，您工作了" + round + "天。"
             round += 1
         }
     } else {
@@ -65,11 +65,11 @@ function see() {
         }
         if (check) {
             score += 1
-            document.getElementById("score").textContent = "員工信任度：" + score + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "模擬公司本年收入：NT$" + score + "，您投資了" + round + "輪。"
             round += 1
         } else {
             score -= 1
-            document.getElementById("score").textContent = "員工信任度：" + score + "，您投資了" + round + "輪。"
+            document.getElementById("score").textContent = "模擬公司本年收入：NT$" + score + "，您投資了" + round + "輪。"
             round += 1
         }
     }
