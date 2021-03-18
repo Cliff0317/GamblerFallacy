@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>賭徒謬誤</title>
     <link rel="shortcut icon" href="favicon.ico">
-    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 </head>
 
 <body style="font-family: Microsoft Jhenghei; font-size: 15px;">
@@ -35,7 +37,14 @@
         <summary>遊戲結束？點擊此處！</summary>
         <a id="restart" style="text-decoration: none; color: black; background-color: cyan;">&nbsp;重玩遊戲&nbsp;</a>
         &lt;-此選項僅能於遊戲結束時使用。 </details>
-            <script src="game.js"></script>
+    <script src="game.js"></script>
+    <script>
+        Swal.fire({
+            title: '注意事項',
+            html: '注意：<br> • 請勿重複選擇相同選項，必須有策略！<br> • Messenger可不開，但得紀錄正確以及錯誤次數！',
+            icon: 'warning'
+        })
+    </script>
 </body>
 
 </html>

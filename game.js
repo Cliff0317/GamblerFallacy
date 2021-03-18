@@ -40,7 +40,11 @@ function see() {
             document.getElementById("output").innerHTML += "<p style='background-color: cyan; width: 100px; font-size: 35%;'>Jake 已解除好友</p>"
             document.getElementById("score").textContent = "您投資了" + round + "天。但是，我們將解僱您，並找到一個更聰明的老闆...祝您好運！"
             document.getElementById("restart").href = "index.htm";
-            swal("遊戲結束", "遊戲結束。請將" + round + "天報告給教授，當作分數。");
+            Swal.fire({
+                title: "遊戲結束",
+                html: "遊戲結束。請將網頁上所顯示之分數當作分數，謝謝！",
+                icon: "info"
+            })
             return
         }
         if (check) {
