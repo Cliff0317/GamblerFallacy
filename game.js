@@ -49,11 +49,11 @@ function see() {
         }
         if (check) {
             score += 1
-            document.getElementById("score").textContent = "公司收入：NT$" + score * 100 + "，您工作了" + round + "天。"
+            document.getElementById("score").textContent = "公司收入：NT$" + score * 10000 + "，您工作了" + round + "天。"
             round += 1
         } else {
             score -= 1
-            document.getElementById("score").textContent = "公司收入：NT$" + score * 100 + "，您工作了" + round + "天。"
+            document.getElementById("score").textContent = "公司收入：NT$" + score * 10000 + "，您工作了" + round + "天。"
             round += 1
         }
     } else {
@@ -78,7 +78,7 @@ function rise() {
     let ans = rand(2);
     if (ans == 1) {
         check = true;
-    } else if (ans == 0) {
+    } else {
         check = false;
     }
     see()
@@ -88,7 +88,7 @@ function fall() {
     let ans = rand(2);
     if (ans == 0) {
         check = true;
-    } else if (ans == 1) {
+    } else {
         check = false;
     }
     see()
