@@ -5,7 +5,7 @@ function rand(max) {
 window.onload = function() {
     document.getElementById("output").innerHTML += "<p style='background-color: cyan; width: 100px; font-size: 35%;'>嘿，你猜啥？😜</p>"
 }
-
+let results = [];
 let round = 1;
 let check = false;
 let guess = 1;
@@ -74,8 +74,8 @@ function see() {
     }
 }
 function rise() {
-    guess = 1;
     let ans = rand(2);
+    results.push(ans);
     if (ans == 1) {
         check = true;
     } else {
@@ -84,8 +84,8 @@ function rise() {
     see()
 }
 function fall() {
-    guess = 0;
     let ans = rand(2);
+    results.push(ans);
     if (ans == 0) {
         check = true;
     } else {
